@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>暂无</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/TheTree.js"></script>
+<script type="text/javascript">
+ window.onload=function(){
+
+ 	var tt = new TheTree(".FAQlist");
+ 	tt.start();
+
+ 	document.getElementById("btn").onclick=function(){
+ 		tt.jh();
+ 	};
+ };
+</script>
+</head>
+<body>
+ <div class="bartitleFAQ">
+<button id="btn">服务管理 </button>
+<div class="FAQlist">
+<ul>
+<li><a href='#'> 等待提交</a></li>
+<li><a href='#' title=''> 等待发布</a></li>
+<li><a href='#' title=''> 正式项目</a></li>
+<li><a href='#' title=''> 点此新增</a></li></ul>
+</div>
+</body>
+</html>
