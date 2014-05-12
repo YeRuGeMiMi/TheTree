@@ -3,13 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>暂无</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/tree.css">
 <script type="text/javascript" src="js/TheTree.js"></script>
 <script type="text/javascript">
  window.onload=function(){
 
- 	var tt = new TheTree(".FAQlist");
- 	tt.start();
+ 	var eljson=[{"name":"等待提交","link":"#"},{"name":"等待发布","link":"#"},{"name":"正式项目","link":"#"},{"name":"点此新增","link":"#"}];
+
+ 	var tt = new TheTree(".FAQlist",eljson);
+ 	//tt.create(eljson);
+ 	//tt.start();
 
  	document.getElementById("btn").onclick=function(){
  		tt.jh();
@@ -21,11 +24,11 @@
  <div class="bartitleFAQ">
 <button id="btn">服务管理 </button>
 <div class="FAQlist">
-<ul>
+<!--<ul>
 <li><a href='#'> 等待提交</a></li>
 <li><a href='#' title=''> 等待发布</a></li>
 <li><a href='#' title=''> 正式项目</a></li>
-<li><a href='#' title=''> 点此新增</a></li></ul>
+<li><a href='#' title=''> 点此新增</a></li></ul> -->
 </div>
 </body>
 </html>
