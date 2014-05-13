@@ -5,6 +5,9 @@ function TheTree(tlist,eljson){
 	this.start();
 }
 
+//属性状态
+TheTree.prototype.status=false;
+
 //开始载入
 TheTree.prototype.start=function(){
 	this.list.style.display="none";
@@ -14,8 +17,10 @@ TheTree.prototype.start=function(){
 TheTree.prototype.jh=function(){
 	if (this.list.style.display == "none") {
 		this.list.style.display = "block";
+		this.status=true;
 	}else{
 		this.list.style.display = "none";
+		this.status=false;
 	}
 }
 
@@ -39,4 +44,18 @@ TheTree.prototype.create=function(eljson){
 
 	this.list.appendChild(ul);
 
+}
+
+//只允许一个被点开
+TheTree.prototype.open=function(objectArray){
+	for(var i = 0;i<objectArray.length;i++){
+		if (objectArray[i] === this) {
+			continue;
+		};
+
+		if (objectArray[i].status) {
+			objectArray[i].jh();
+		};
+		
+	}
 }

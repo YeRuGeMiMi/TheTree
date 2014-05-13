@@ -9,14 +9,32 @@
  window.onload=function(){
 
  	var eljson=[{"name":"等待提交","link":"#"},{"name":"等待发布","link":"#"},{"name":"正式项目","link":"#"},{"name":"点此新增","link":"#"}];
+ 	var usjson=[{"name":"查看用户","link":"#"},{"name":"用户列表","link":"#"},{"name":"会员用户","link":"#"},{"name":"超级用户","link":"#"}];
+ 	var orjson=[{"name":"订单详情","link":"#"},{"name":"要货单","link":"#"},{"name":"退货单","link":"#"},{"name":"补货单","link":"#"}];
 
  	var tt = new TheTree(".FAQlist",eljson);
- 	//tt.create(eljson);
- 	//tt.start();
+ 	var pp = new TheTree(".Userlist",usjson);
+ 	var oo = new TheTree(".Orderlist",orjson);
+ 	
+ 	var oarray=new Array();
+ 	oarray[0]=tt;
+ 	oarray[1]=pp;
+ 	oarray[2]=oo;
 
  	document.getElementById("btn").onclick=function(){
  		tt.jh();
+ 		tt.open(oarray);
  	};
+
+ 	document.getElementById("btn1").onclick=function(){
+ 		pp.jh();
+ 		pp.open(oarry);
+ 	};
+
+ 	document.getElementById("btn2").onclick=function(){
+ 		oo.jh();
+ 		oo.open(oarray);
+ 	}
  };
 </script>
 </head>
@@ -29,6 +47,14 @@
 <li><a href='#' title=''> 等待发布</a></li>
 <li><a href='#' title=''> 正式项目</a></li>
 <li><a href='#' title=''> 点此新增</a></li></ul> -->
+</div>
+</div>
+<div class="UserManager">
+<button id="btn1">用户管理</button>
+<div class="Userlist"></div>
+<div class="OrderManager">
+<button id="btn2">订单管理</button>
+<div class="Orderlist"></div>
 </div>
 </body>
 </html>
